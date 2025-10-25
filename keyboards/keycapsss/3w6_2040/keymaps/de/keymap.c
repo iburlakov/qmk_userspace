@@ -4,6 +4,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 
 #include QMK_KEYBOARD_H
+#include "keymap_german_mac_iso.h"
 enum layers {
     _ALPHA_QWERTY = 0,
     _ALPHA_COLEMAK,
@@ -19,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_ALPHA_QWERTY] = LAYOUT_split_3x5_3(
         KC_Q,         KC_W,    KC_E,    KC_R,    KC_T,                                                KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
-        KC_A,         KC_S,    KC_D,    KC_F,    KC_G,                                                KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,
+        HOME_A,       HOME_S,  HOME_D,  HOME_F,  KC_G,                                                KC_H,    HOME_J,  HOME_K,  HOME_L,  HOME_SCLN,
         LSFT_T(KC_Z), KC_X,    KC_C,    KC_V,    KC_B,                                                KC_N,    KC_M,    KC_COMM, KC_DOT,  RSFT_T(KC_SLSH),
                         LCTL_T(KC_ESC), LT(_NUM,KC_SPC), LT(_NAV, KC_TAB),     LT(_SYM, KC_BSPC), KC_ENT, LALT_T(KC_DEL)
     ),
