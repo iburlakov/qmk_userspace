@@ -5,7 +5,7 @@
 
 #include QMK_KEYBOARD_H
 #include "keymap_german_mac_iso.h"
-#include "keymap_german_sym.h"
+#include "keymap_german_sym_win.h"
 
 enum layers {
     _ALPHA_QWERTZ_MAC = 0,
@@ -32,26 +32,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_Q,         KC_W,    KC_E,    KC_R,    KC_T,                                                KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
         KC_A,         KC_S,    KC_D,    KC_F,    KC_G,                                                KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,
         LSFT_T(KC_Z), KC_X,    KC_C,    KC_V,    KC_B,                                                KC_N,    KC_M,    LCTL_T(KC_COMM), LALT_T(KC_DOT),  RSFT_T(KC_SLSH),
-                        LGUI_T(KC_ESC), LT(_NUM,KC_SPC), LT(_NAV, KC_TAB),     LT(_SYM_WIN, KC_BSPC), KC_ENT, XXXXXXX
+                        LCTL_T(KC_ESC), LT(_NUM,KC_SPC), LT(_NAV, KC_TAB),     LT(_SYM_WIN, KC_BSPC), KC_ENT, XXXXXXX
     ),
     [_ALPHA_HOME_ROW_MOD] = LAYOUT_split_3x5_3(
-        KC_Q,         KC_W,    KC_E,    KC_R,    KC_T,                                                KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
-        HOME_A,       HOME_S,  HOME_D,  HOME_F,  KC_G,                                                KC_H,    HOME_J,  HOME_K,  HOME_L,  HOME_SCLN,
-        LSFT_T(KC_Z), KC_X,    KC_C,    KC_V,    KC_B,                                                KC_N,    KC_M,    KC_COMM, KC_DOT,  RSFT_T(KC_SLSH),
-                        LCTL_T(KC_ESC), LT(_NUM,KC_SPC), LT(_NAV, KC_TAB),     LT(_SYM, KC_BSPC), KC_ENT, XXXXXXX
-
+        KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                                                KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,
+        HOME_A,  HOME_S,  HOME_D,  HOME_F,  KC_G,                                                KC_H,    HOME_J,  HOME_K,  HOME_L,  HOME_SCLN,
+        KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                                                KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,
+                        LCTL_T(KC_ESC), LT(_NUM, KC_SPC), LT(_NAV, KC_TAB),     LT(_SYM, KC_BSPC), KC_ENT, XXXXXXX
     ),
     [_SYM] = LAYOUT_split_3x5_3(
-        KC_GRV , KC_CIRC, KC_AT,   KC_DLR,  DE_LPRN,                                DE_RPRN, KC_EXLM, KC_PIPE, KC_UNDS, KC_HASH,
-        KC_SLSH, KC_LBRC, KC_LCBR, KC_LPRN, DE_LCBR,                                DE_RCBR, KC_RPRN, KC_RCBR, KC_RBRC, KC_BSLS,
-        _______, KC_QUES, KC_PLUS, KC_PERC, DE_LBRC,                                DE_RBRC, XXXXXXX, KC_MINS, XXXXXXX, _______,
+        DE_EXLM, DE_DQUO, DE_DLR,  DE_PERC, DE_LPRN,                                DE_RPRN, DE_AMPR, DE_SLSH, DE_QUES, DE_PLUS,
+        KC_SLSH, KC_LBRC, KC_LCBR, KC_LPRN, DE_LCBR,                                DE_RCBR, KC_RPRN, KC_RCBR, KC_RBRC, DE_HASH,
+        _______, DE_AT,   DE_LABK, DE_RABK, DE_LBRC,                                DE_RBRC, XXXXXXX, KC_MINS, XXXXXXX, _______,
                                         XXXXXXX, MO(_CFG), XXXXXXX,     _______, XXXXXXX, XXXXXXX
     ),
     [_SYM_WIN] = LAYOUT_split_3x5_3(
-        KC_GRV , KC_CIRC, DE_AT_WIN, KC_DLR,  DE_LPRN,                                    DE_RPRN, KC_EXLM, KC_PIPE, KC_UNDS, KC_HASH,
-        KC_SLSH, KC_LBRC, KC_LCBR,   KC_LPRN, DE_LCBR_WIN,                                DE_RCBR_WIN, KC_RPRN, KC_RCBR, KC_RBRC, KC_BSLS,
-        _______, KC_QUES, KC_PLUS,   KC_PERC, DE_LBRC_WIN,                                DE_RBRC_WIN, XXXXXXX, KC_MINS, XXXXXXX, _______,
-                                        XXXXXXX, MO(_CFG), XXXXXXX,     _______, XXXXXXX, XXXXXXX
+        DE_EXLM, DE_DQUO, DE_DLR,    DE_PERC, DE_LPRN,                                    DE_RPRN,     DE_AMPR, DE_SLSH, DE_QUES, DE_PLUS,
+        KC_SLSH, KC_LBRC, KC_LCBR,   KC_LPRN, DE_LCBR_WIN,                                DE_RCBR_WIN, KC_RPRN, KC_RCBR, KC_RBRC, DE_HASH,
+        _______, DE_AT_WIN, DE_LABK, DE_RABK, DE_LBRC_WIN,                                DE_RBRC_WIN, XXXXXXX, KC_MINS, XXXXXXX, _______,
+                                        XXXXXXX, MO(_CFG), KC_LGUI,     _______, XXXXXXX, XXXXXXX
     ),
     [_NAV] = LAYOUT_split_3x5_3(
         XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX,                                XXXXXXX, KC_PGDN,   KC_UP, KC_PGUP,  KC_DEL,
@@ -61,9 +60,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_NUM] = LAYOUT_split_3x5_3(
         XXXXXXX,  KC_F9, KC_F10, KC_F11, KC_F12,                                    KC_PPLS,  KC_P7,  KC_P8,  KC_P9, KC_PSLS,
-        XXXXXXX,  KC_F5,  KC_F6,  KC_F7,  KC_F8,                                    KC_P0,  KC_P4,  KC_P5,  KC_P6, KC_PDOT,
-        XXXXXXX,  KC_F1,  KC_F2,  KC_F3,  KC_F4,                                    KC_PMNS,  KC_P1,  KC_P2,  KC_P3, KC_PAST,
-                                        XXXXXXX, _______, XXXXXXX,      KC_PEQL, KC_PENT, XXXXXXX
+        XXXXXXX,  KC_F5, KC_F6,  KC_F7,  KC_F8,                                     KC_P0,    KC_P4,  KC_P5,  KC_P6, KC_PDOT,
+        XXXXXXX,  KC_F1, KC_F2,  KC_F3,  KC_F4,                                     KC_PMNS,  KC_P1,  KC_P2,  KC_P3, KC_PAST,
+                                        XXXXXXX, _______, KC_LGUI,      KC_PEQL, KC_PENT, XXXXXXX
     ),
     [_CFG] = LAYOUT_split_3x5_3(
         XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                XXXXXXX, XXXXXXX, DF(_ALPHA_QWERTZ_MAC), DF(_ALPHA_QWERTZ_WIN), DF(_ALPHA_HOME_ROW_MOD),
