@@ -42,20 +42,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
     [_SYM] = LAYOUT_split_3x5_3(
         DE_EXLM, DE_DQUO, DE_DLR,  DE_PERC, DE_LPRN,                                DE_RPRN, DE_AMPR, DE_SLSH, DE_QUES, DE_PLUS,
-        KC_SLSH, KC_LBRC, KC_LCBR, KC_LPRN, DE_LCBR,                                DE_RCBR, KC_RPRN, KC_RCBR, KC_RBRC, DE_HASH,
+        DE_BSLS, KC_LBRC, KC_LCBR, KC_LPRN, DE_LCBR,                                DE_RCBR, KC_RPRN, KC_RCBR, DE_ACUT, DE_HASH,
         _______, DE_AT,   DE_LABK, DE_RABK, DE_LBRC,                                DE_RBRC, XXXXXXX, KC_MINS, XXXXXXX, _______,
                                         XXXXXXX, MO(_CFG), XXXXXXX,     _______, XXXXXXX, XXXXXXX
     ),
     [_SYM_WIN] = LAYOUT_split_3x5_3(
-        DE_EXLM, DE_DQUO, DE_DLR,    DE_PERC, DE_LPRN,                                    DE_RPRN,     DE_AMPR, DE_SLSH, DE_QUES, DE_PLUS,
-        KC_SLSH, KC_LBRC, KC_LCBR,   KC_LPRN, DE_LCBR_WIN,                                DE_RCBR_WIN, KC_RPRN, KC_RCBR, KC_RBRC, DE_HASH,
-        _______, DE_AT_WIN, DE_LABK, DE_RABK, DE_LBRC_WIN,                                DE_RBRC_WIN, XXXXXXX, KC_MINS, XXXXXXX, _______,
+        DE_EXLM,     DE_DQUO,   DE_DLR,    DE_PERC, DE_LPRN,                                    DE_RPRN,     DE_AMPR, DE_SLSH, DE_QUES, DE_PLUS,
+        DE_BSLS_WIN, KC_LBRC,   KC_LCBR,   KC_LPRN, DE_LCBR_WIN,                                DE_RCBR_WIN, KC_RPRN, KC_RCBR, DE_ACUT, DE_HASH,
+        _______,     DE_AT_WIN, DE_LABK,   DE_RABK, DE_LBRC_WIN,                                DE_RBRC_WIN, XXXXXXX, KC_MINS, XXXXXXX, _______,
                                         XXXXXXX, MO(_CFG), KC_LGUI,     _______, XXXXXXX, XXXXXXX
     ),
     [_NAV] = LAYOUT_split_3x5_3(
-        XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX,                                XXXXXXX, KC_PGDN,   KC_UP, KC_PGUP,  KC_DEL,
-        KC_MPRV, KC_MPLY, KC_MSTP, KC_MNXT, XXXXXXX,                                KC_HOME, KC_LEFT, KC_DOWN, KC_RGHT,  KC_END,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX,                                KC_HOME, KC_END,  KC_UP,   KC_PGUP,  KC_DEL,
+        KC_MPRV, KC_MPLY, KC_MSTP, KC_MNXT, XXXXXXX,                                KC_LEFT, KC_DOWN, KC_PGDN, KC_RGHT,  KC_END,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                                XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  XXXXXXX,
                                         XXXXXXX, XXXXXXX, _______,      XXXXXXX, MO(_CFG), XXXXXXX
     ),
     [_NUM] = LAYOUT_split_3x5_3(
